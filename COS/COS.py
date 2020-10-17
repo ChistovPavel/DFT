@@ -43,16 +43,16 @@ def getComplexPhase(complexNumbers):
 numbers = signalFunction(16)
 result = DFT(numbers)
 
-print("numbers:\n")
+print("Function values:\n")
 print(numbers)
-print("\nresult:\n")
+print("\nDFT values:\n")
 print(result)
 
 args = getComplexAbs(result)
 phases = getComplexPhase(result)
 
-print("\nArgs:\n")
+print("\nAbs:\n")
 print(args)
-print("\nPhases:\n")
+print("\nPhase:\n")
 print(phases)
 
