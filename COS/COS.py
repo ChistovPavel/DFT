@@ -23,7 +23,7 @@ def DFT(numbers):
 def getComplexAbs(complexNumbers):
 	result = []
 	for i in range(len(complexNumbers)):
-		result.append(abs(complexNumbers[i]))
+		result.append(round(abs(complexNumbers[i]), 2))
 	return result
 
 def getComplexPhase(complexNumbers):
@@ -32,19 +32,23 @@ def getComplexPhase(complexNumbers):
 		result.append(round(cmath.phase(complexNumbers[i])/math.pi, 2))
 	return result
 
+def printWithRowNumber(arr):
+	for i in range(0, len(arr), 1):
+		print("{0}) {1}".format(i, arr[i]))
+
 numbers = signalFunction(16)
 result = DFT(numbers)
 
 print("Function values:\n")
-print(numbers)
+printWithRowNumber(numbers)
 print("\nDFT values:\n")
-print(result)
+printWithRowNumber(result)
 
 args = getComplexAbs(result)
 phases = getComplexPhase(result)
 
 print("\nAbs:\n")
-print(args)
+printWithRowNumber(args)
 print("\nPhase:\n")
-print(phases)
+printWithRowNumber(phases)
 
