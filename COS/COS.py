@@ -1,18 +1,10 @@
 import math
 import cmath
 
-def getRadianAngle(n, N, additionalVal):
-	val = ((additionalVal * 2 * n) % N)
-
-	if (val == 0 and n != 0):
-		return 1
-	else:
-		return val/N
-
 def signalFunction(N):
 	numbers = []
 	for n in range(0, N, 1):
-		numbers.append(round(math.sin(getRadianAngle(n, N, 1) * math.pi) + math.cos(getRadianAngle(n, N, 7) * math.pi), 2))
+		numbers.append(round(math.sin(2 * math.pi * n / N) + math.cos(7 * 2 * math.pi * n / N), 2))
 	return numbers
 
 
